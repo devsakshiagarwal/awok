@@ -8,8 +8,8 @@
 
   <androidx.appcompat.widget.AppCompatImageView
       android:id="@+id/iv_product_plp"
-      android:layout_width="@dimen/width_image_plp"
-      android:layout_height="@dimen/width_image_plp"
+      android:layout_width="@dimen/dp_128"
+      android:layout_height="@dimen/dp_128"
       android:layout_margin="@dimen/dp_8"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintLeft_toLeftOf="parent"

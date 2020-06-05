@@ -12,12 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.goyal.awok.R
 import com.goyal.awok.model.schema.Item
-import kotlinx.android.synthetic.main.item_product_horizontal.view.btn_add_to_cart
-import kotlinx.android.synthetic.main.item_product_horizontal.view.iv_product
-import kotlinx.android.synthetic.main.item_product_horizontal.view.tv_offer
-import kotlinx.android.synthetic.main.item_product_horizontal.view.tv_new_price
-import kotlinx.android.synthetic.main.item_product_horizontal.view.tv_old_price
-import kotlinx.android.synthetic.main.item_product_horizontal.view.tv_product_name
+import kotlinx.android.synthetic.main.item_product_horizontal.view.*
 
 class HorizontalListAdapter(
   private val list: List<Item>,
@@ -52,7 +47,7 @@ class HorizontalListAdapter(
         .fallback(R.drawable.ic_place_holder)
         .into(holder.ivProduct)
     holder.btnAddToCart.setOnClickListener {
-      Toast.makeText(context, item.name + "added to cart", Toast.LENGTH_SHORT)
+      Toast.makeText(context, item.name + context.getString(R.string.added_to_cart), Toast.LENGTH_SHORT)
           .show()
     }
   }

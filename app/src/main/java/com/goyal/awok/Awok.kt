@@ -12,5 +12,5 @@ class Awok : Application() {
     compRoot = CompRoot(this)
   }
 
-  fun getCompRoot() = compRoot
+  fun compRoot() = compRoot
 }

@@ -49,7 +49,9 @@ class VerticalListAdapter(
         .fallback(R.drawable.ic_place_holder)
         .into(holder.ivProduct)
     holder.btnAddToCart.setOnClickListener {
-      Toast.makeText(context, item.name + "added to cart", Toast.LENGTH_SHORT)
+      Toast.makeText(
+          context, item.name + context.getString(R.string.added_to_cart), Toast.LENGTH_SHORT
+      )
           .show()
     }
   }

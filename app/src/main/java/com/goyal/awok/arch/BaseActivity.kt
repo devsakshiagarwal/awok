@@ -11,7 +11,7 @@ open class BaseActivity : FragmentActivity() {
 
   protected fun compRoot(): CompRoot? {
     if (compRoot == null) {
-      compRoot = (application as Awok).getCompRoot()
+      compRoot = (application as Awok).compRoot()
     }
     return compRoot
   }
