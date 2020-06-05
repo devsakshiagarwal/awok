@@ -10,7 +10,7 @@
     >
 
   <androidx.appcompat.widget.AppCompatTextView
-      android:id="@+id/buy_text"
+      android:id="@+id/tv_offer"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:background="@drawable/bg_offer"
@@ -27,7 +27,7 @@
       />
 
   <androidx.appcompat.widget.AppCompatImageView
-      android:id="@+id/product_img"
+      android:id="@+id/iv_product"
       android:layout_width="@dimen/dp_90"
       android:layout_height="@dimen/dp_90"
       android:layout_marginTop="@dimen/dp_4"
@@ -38,7 +38,7 @@
       />
 
   <androidx.appcompat.widget.AppCompatTextView
-      android:id="@+id/product_name"
+      android:id="@+id/tv_product_name"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginTop="@dimen/dp_8"
@@ -47,32 +47,32 @@
       android:textColor="@color/color_4c"
       android:textSize="@dimen/sp_14"
       app:layout_constraintLeft_toLeftOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/product_img"
+      app:layout_constraintTop_toBottomOf="@id/iv_product"
       tools:text="Shrikhand Mango Dahsdfae"
       />
 
 
   <androidx.appcompat.widget.AppCompatTextView
-      android:id="@+id/discount_price"
+      android:id="@+id/tv_new_price"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginTop="@dimen/dp_8"
       android:textColor="@color/color_a6ce39"
       android:textSize="@dimen/sp_14"
-      app:layout_constraintLeft_toLeftOf="@id/product_name"
-      app:layout_constraintTop_toBottomOf="@id/product_name"
+      app:layout_constraintLeft_toLeftOf="@id/tv_product_name"
+      app:layout_constraintTop_toBottomOf="@id/tv_product_name"
       tools:text="Rs. 122.90"
       />
 
   <androidx.appcompat.widget.AppCompatTextView
-      android:id="@+id/original_price"
+      android:id="@+id/tv_old_price"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginTop="@dimen/dp_8"
       android:textColor="@color/color_bd"
       android:textSize="@dimen/sp_10"
-      app:layout_constraintLeft_toLeftOf="@id/discount_price"
-      app:layout_constraintTop_toBottomOf="@id/discount_price"
+      app:layout_constraintLeft_toLeftOf="@id/tv_new_price"
+      app:layout_constraintTop_toBottomOf="@id/tv_new_price"
       tools:text="Rs. 157"
       />
 
