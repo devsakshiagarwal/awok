@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="@dimen/dp_176"
+    android:layout_height="@dimen/dp_224"
+    android:background="@drawable/divider_dotted_vertical"
+    android:padding="@dimen/dp_8"
+    >
+
+  <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/buy_text"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:background="@drawable/bg_offer"
+      android:ellipsize="end"
+      android:gravity="center"
+      android:maxEms="15"
+      android:maxLines="1"
+      android:paddingBottom="@dimen/dp_2"
+      android:text="15% off"
+      android:textColor="@color/color_ff"
+      android:textSize="@dimen/sp_10"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      />
+
+  <androidx.appcompat.widget.AppCompatImageView
+      android:id="@+id/product_img"
+      android:layout_width="@dimen/dp_90"
+      android:layout_height="@dimen/dp_90"
+      android:layout_marginTop="@dimen/dp_4"
+      android:src="@drawable/ic_place_holder"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      />
+
+  <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/product_name"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/dp_8"
+      android:ellipsize="end"
+      android:maxLines="2"
+      android:textColor="@color/color_4c"
+      android:textSize="@dimen/sp_14"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/product_img"
+      tools:text="Shrikhand Mango Dahsdfae"
+      />
+
+
+  <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/discount_price"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/dp_8"
+      android:textColor="@color/color_a6ce39"
+      android:textSize="@dimen/sp_14"
+      app:layout_constraintLeft_toLeftOf="@id/product_name"
+      app:layout_constraintTop_toBottomOf="@id/product_name"
+      tools:text="Rs. 122.90"
+      />
+
+  <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/original_price"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/dp_8"
+      android:textColor="@color/color_bd"
+      android:textSize="@dimen/sp_10"
+      app:layout_constraintLeft_toLeftOf="@id/discount_price"
+      app:layout_constraintTop_toBottomOf="@id/discount_price"
+      tools:text="Rs. 157"
+      />
+
+
+  <androidx.appcompat.widget.AppCompatButton
+      android:id="@+id/btn_add_to_cart"
+      android:layout_width="70dp"
+      android:layout_height="@dimen/dp_32"
+      android:layout_gravity="center"
+      android:background="@drawable/bg_button"
+      android:text="Add"
+      android:textAllCaps="false"
+      android:textColor="@color/color_ff"
+      android:textSize="@dimen/sp_14"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
