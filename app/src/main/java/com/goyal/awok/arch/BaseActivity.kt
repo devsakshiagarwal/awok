@@ -1,20 +1,17 @@
-package com.sakshi.gamechange.arch
+package com.goyal.awok.arch
 
 import android.annotation.SuppressLint
 import androidx.fragment.app.FragmentActivity
-import com.sakshi.gamechange.GameChange
+import com.goyal.awok.Awok
 
 @SuppressLint("Registered")
 open class BaseActivity : FragmentActivity() {
 
-  private var compRoot: CompRootUi? = null
+  private var compRoot: CompRoot? = null
 
-  protected fun compRoot(): CompRootUi? {
+  protected fun compRoot(): CompRoot? {
     if (compRoot == null) {
-      compRoot = CompRootUi(
-          (application as GameChange).getCompRoot(),
-          this
-      )
+      compRoot = (application as Awok).getCompRoot()
     }
     return compRoot
   }

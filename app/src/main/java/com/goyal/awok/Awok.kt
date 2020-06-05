@@ -1,16 +1,16 @@
 package com.goyal.awok
 
 import android.app.Application
-import com.sakshi.gamechange.arch.CompRoot
+import com.goyal.awok.arch.CompRoot
 
-class GameChange : Application() {
+class Awok : Application() {
 
-    private lateinit var compRoot: CompRoot
+  private lateinit var compRoot: CompRoot
 
-    override fun onCreate() {
-        super.onCreate()
-        compRoot = CompRoot(this)
-    }
+  override fun onCreate() {
+    super.onCreate()
+    compRoot = CompRoot(this)
+  }
 
-    fun getCompRoot() = compRoot
+  fun getCompRoot() = compRoot
 }

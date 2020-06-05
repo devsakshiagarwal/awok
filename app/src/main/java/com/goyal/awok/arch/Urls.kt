@@ -1,4 +1,6 @@
 package com.goyal.awok.arch
 
-class Urls {
+object Urls {
+  const val HOME_URL = "home/"
+  const val FLASH_URL = "flash/"
 }
