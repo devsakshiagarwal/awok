@@ -1,6 +1,7 @@
 package com.goyal.awok.view
 
 import android.content.Context
+import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -36,9 +37,10 @@ class HorizontalListAdapter(
   ) {
     val item: Item = list[position]
     holder.tvProductName.text = item.name
-    holder.tvOldPrice.text = item.prices.oldPrice
-    holder.tvNewPrice.text = item.prices.newPrice
-    holder.tvOffer.text = item.prices.discount
+    holder.tvOldPrice.text = getPrice(item.prices.oldPrice)
+    holder.tvOldPrice.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
+    holder.tvNewPrice.text = getPrice(item.prices.newPrice)
+    holder.tvOffer.text = getOffer(getPrice(item.prices.discount))
     Glide.with(context)
         .load(item.image.imageSource)
         .centerCrop()
@@ -47,9 +49,19 @@ class HorizontalListAdapter(
         .fallback(R.drawable.ic_place_holder)
         .into(holder.ivProduct)
     holder.btnAddToCart.setOnClickListener {
-      Toast.makeText(context, item.name + context.getString(R.string.added_to_cart), Toast.LENGTH_SHORT)
+      Toast.makeText(
+          context, item.name + context.getString(R.string.added_to_cart), Toast.LENGTH_SHORT
+      )
           .show()
     }
+  }
+
+  private fun getPrice(price: String): String {
+    return context.getString(R.string.aed) + price
+  }
+
+  private fun getOffer(price: String): String {
+    return price + context.getString(R.string.off)
   }
 
   override fun getItemCount(): Int = list.size

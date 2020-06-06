@@ -2,17 +2,17 @@ package com.goyal.awok.view
 
 import android.graphics.Color
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.goyal.awok.R
 import com.goyal.awok.R.layout
 import com.goyal.awok.arch.BaseActivity
 import com.goyal.awok.viewmodel.HomeViewModel
-import kotlinx.android.synthetic.main.activity_home.rv_horizontal
-import kotlinx.android.synthetic.main.activity_home.rv_vertical
+import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : BaseActivity() {
 
@@ -30,14 +30,16 @@ class HomeActivity : BaseActivity() {
   }
 
   private fun initComponents() {
-    viewModel = ViewModelProviders.of(this)
-        .get(HomeViewModel::class.java)
+    viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
     viewModel.setRepository(compRoot()!!.getHomeRepository())
+    pb_horizontal.visibility = View.VISIBLE
+    pb_vertical.visibility = View.VISIBLE
     startObserving()
   }
 
   private fun startObserving() {
     viewModel.liveDataVerticalList.observe(this, Observer {
+      pb_vertical.visibility = View.GONE
       if (it != null) {
         rv_vertical.apply {
           layoutManager = LinearLayoutManager(this@HomeActivity)
@@ -51,9 +53,9 @@ class HomeActivity : BaseActivity() {
       }
     })
     viewModel.liveDataHorizontalList.observe(this, Observer {
+      pb_horizontal.visibility = View.GONE
       if (it != null) {
         rv_horizontal.apply {
-          layoutManager = LinearLayoutManager(this@HomeActivity)
           adapter =
             HorizontalListAdapter(it, this@HomeActivity)
         }
@@ -64,6 +66,8 @@ class HomeActivity : BaseActivity() {
     })
     viewModel.liveDataErrorMessage.observe(this, Observer {
       if (it != null) {
+        pb_horizontal.visibility = View.GONE
+        pb_vertical.visibility = View.GONE
         Snackbar.make(findViewById(android.R.id.content), it, Snackbar.LENGTH_LONG)
             .setActionTextColor(Color.RED)
             .show()

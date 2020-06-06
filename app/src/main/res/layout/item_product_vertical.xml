@@ -7,29 +7,30 @@
     >
 
   <androidx.appcompat.widget.AppCompatImageView
-      android:id="@+id/iv_product_plp"
+      android:id="@+id/iv_product"
       android:layout_width="@dimen/dp_128"
       android:layout_height="@dimen/dp_128"
       android:layout_margin="@dimen/dp_8"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintLeft_toLeftOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.0"
       app:srcCompat="@drawable/ic_place_holder"
       />
 
 
   <androidx.appcompat.widget.AppCompatTextView
       android:id="@+id/tv_product_name"
-      android:layout_width="wrap_content"
+      android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_margin="@dimen/dp_16"
+      android:layout_marginTop="@dimen/dp_16"
+      android:layout_marginStart="@dimen/dp_144"
       android:ellipsize="end"
       android:maxLines="2"
-      android:text="Product Name"
+      android:paddingEnd="@dimen/dp_16"
+      android:paddingStart="@dimen/dp_0"
       android:textColor="@color/color_4c"
       android:textSize="@dimen/sp_17"
-      app:layout_constraintLeft_toRightOf="@id/iv_product_plp"
+      app:layout_constraintLeft_toLeftOf="parent"
       app:layout_constraintTop_toTopOf="parent"
       />
 
@@ -38,9 +39,8 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginTop="@dimen/dp_8"
-      android:text="Rs. 12"
-      android:textColor="@color/colorPrimary"
-      android:textSize="@dimen/sp_17"
+      android:textColor="@color/color_a6ce39"
+      android:textSize="@dimen/sp_14"
       app:layout_constraintLeft_toLeftOf="@id/tv_product_name"
       app:layout_constraintTop_toBottomOf="@id/tv_product_name"
       />
@@ -50,24 +50,22 @@
       android:id="@+id/tv_old_price"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginStart="@dimen/dp_16"
+      android:layout_marginStart="@dimen/dp_8"
       android:layout_marginTop="@dimen/dp_4"
-      android:text="Rs. 10"
       android:textColor="@color/colorTextLight"
-      android:textSize="@dimen/sp_12"
+      android:textSize= "@dimen/sp_12"
       app:layout_constraintBaseline_toBaselineOf="@id/tv_new_price"
       app:layout_constraintLeft_toRightOf="@id/tv_new_price"
       app:layout_constraintTop_toBottomOf="@id/tv_product_name"
       />
 
   <androidx.appcompat.widget.AppCompatTextView
-      android:id="@+id/offer"
+      android:id="@+id/tv_offer"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginTop="@dimen/dp_8"
       android:ellipsize="end"
       android:maxLines="1"
-      android:text="15% off"
       android:textColor="@color/color_f47621"
       android:textSize="@dimen/sp_13"
       app:layout_constraintLeft_toLeftOf="@id/tv_new_price"
@@ -81,8 +79,8 @@
       android:layout_gravity="center"
       android:layout_margin="@dimen/dp_16"
       android:background="@drawable/bg_button"
-      android:text="Add"
-      android:textAllCaps="false"
+      android:text="@string/add"
+      android:textAllCaps="true"
       android:textColor="@color/color_ff"
       android:textSize="@dimen/sp_14"
       app:layout_constraintBottom_toBottomOf="parent"
@@ -96,6 +94,8 @@
       android:layout_height="2dp"
       android:background="@drawable/divider_dotted_horizontal"
       android:layerType="software"
+      android:layout_marginStart="@dimen/dp_4"
+      android:layout_marginEnd="@dimen/dp_4"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/iv_product_plp"
       />

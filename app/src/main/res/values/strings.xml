@@ -2,6 +2,8 @@
     <string name="app_name">Awok</string>
     <string name="err_vertical">No Data available for vertical list.</string>
     <string name="err_horizontal">No Data available for horizontal list.</string>
-    <string name="added_to_cart">added to cart</string>
+    <string name="added_to_cart">\u0020 added to cart</string>
     <string name="add">add</string>
+    <string name="aed">AED\u0020</string>
+    <string name="off">\u0020off</string>
 </resources>

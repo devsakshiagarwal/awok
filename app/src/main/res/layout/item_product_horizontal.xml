@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/root"
-    android:layout_width="@dimen/dp_176"
-    android:layout_height="@dimen/dp_224"
+    android:layout_width="@dimen/dp_160"
+    android:layout_height="@dimen/dp_208"
     android:background="@drawable/divider_dotted_vertical"
     >
 
@@ -18,7 +17,6 @@
       android:maxEms="15"
       android:maxLines="1"
       android:paddingBottom="@dimen/dp_2"
-      android:text="15% off"
       android:textColor="@color/color_ff"
       android:textSize="@dimen/sp_10"
       android:layout_margin="@dimen/dp_8"
@@ -42,13 +40,14 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_margin="@dimen/dp_8"
+      android:paddingEnd="@dimen/dp_8"
+      android:paddingStart="@dimen/dp_0"
       android:ellipsize="end"
       android:maxLines="2"
       android:textColor="@color/color_4c"
       android:textSize="@dimen/sp_14"
       app:layout_constraintLeft_toLeftOf="parent"
       app:layout_constraintTop_toBottomOf="@id/iv_product"
-      tools:text="Shrikhand Mango Dahsdfae"
       />
 
 
@@ -56,24 +55,21 @@
       android:id="@+id/tv_new_price"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_margin="@dimen/dp_8"
+      android:layout_marginTop="@dimen/dp_4"
       android:textColor="@color/color_a6ce39"
       android:textSize="@dimen/sp_14"
       app:layout_constraintLeft_toLeftOf="@id/tv_product_name"
       app:layout_constraintTop_toBottomOf="@id/tv_product_name"
-      tools:text="Rs. 122.90"
       />
 
   <androidx.appcompat.widget.AppCompatTextView
       android:id="@+id/tv_old_price"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_margin="@dimen/dp_8"
       android:textColor="@color/color_bd"
-      android:textSize="@dimen/sp_10"
+      android:textSize="@dimen/sp_12"
       app:layout_constraintLeft_toLeftOf="@id/tv_new_price"
       app:layout_constraintTop_toBottomOf="@id/tv_new_price"
-      tools:text="Rs. 157"
       />
 
 
@@ -99,6 +95,8 @@
       android:layout_height="match_parent"
       android:background="@drawable/divider_dotted_vertical"
       android:layerType="software"
+      android:layout_marginTop="@dimen/dp_4"
+      android:layout_marginBottom="@dimen/dp_4"
       app:layout_constraintEnd_toEndOf="parent"
       />
 

@@ -27,6 +27,13 @@ class CompRoot(val awok: Awok) {
     client =
       OkHttpClient().newBuilder()
           .addInterceptor(loggingInterceptor)
+          .addInterceptor { it.proceed(
+              it.request()
+                  .newBuilder()
+                  .addHeader("lang", "en")
+                  .addHeader("App-Version", "1832")
+                  .build()
+          ) }
           .build()
   }
 

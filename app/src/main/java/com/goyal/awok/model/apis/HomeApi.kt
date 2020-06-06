@@ -4,6 +4,7 @@ import com.goyal.awok.arch.Urls
 import com.goyal.awok.model.schema.HomeSchema
 import retrofit2.Call
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 interface HomeApi {
 

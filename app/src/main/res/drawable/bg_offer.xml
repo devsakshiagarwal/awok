@@ -5,8 +5,8 @@
 
   <padding
       android:bottom="@dimen/dp_2"
-      android:left="@dimen/dp_2"
-      android:right="@dimen/dp_2"
+      android:left="@dimen/dp_4"
+      android:right="@dimen/dp_4"
       android:top="@dimen/dp_2" />
 
   <corners
