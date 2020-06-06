@@ -7,9 +7,9 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class HomeRepository(homeApi: HomeApi) {
+class HomeRepository(private val homeApi: HomeApi) {
 
-  private val verticalCall = homeApi.getVerticalData()
+  private lateinit var verticalCall: Call<HomeSchema>
   private val horizontalCall = homeApi.getHorizontalData()
   private lateinit var homeApiListener: HomeApiListener
 
@@ -18,26 +18,7 @@ class HomeRepository(homeApi: HomeApi) {
   }
 
   fun fetchHomeData() {
-    verticalCall.enqueue(object : Callback<HomeSchema> {
-      override fun onResponse(
-        call: Call<HomeSchema>,
-        response: Response<HomeSchema>
-      ) {
-        if (response.code() == 200) {
-          val homeSchema = response.body()!!
-          homeApiListener.onVerticalResponseSuccess(homeSchema.output.data.items)
-        } else {
-          homeApiListener.onVerticalResponseFailure("Something does not seem to be right!")
-        }
-      }
-
-      override fun onFailure(
-        call: Call<HomeSchema>,
-        t: Throwable
-      ) {
-        homeApiListener.onVerticalResponseFailure(t.localizedMessage!!)
-      }
-    })
+    fetchVerticalData(1)
     horizontalCall.enqueue(object : Callback<HomeSchema> {
       override fun onResponse(
         call: Call<HomeSchema>,
@@ -56,6 +37,30 @@ class HomeRepository(homeApi: HomeApi) {
         t: Throwable
       ) {
         homeApiListener.onHorizontalResponseFailure(t.localizedMessage!!)
+      }
+    })
+  }
+
+  fun fetchVerticalData(pageNumber: Int) {
+    verticalCall = homeApi.getVerticalData(pageNumber.toString())
+    verticalCall.enqueue(object : Callback<HomeSchema> {
+      override fun onResponse(
+        call: Call<HomeSchema>,
+        response: Response<HomeSchema>
+      ) {
+        if (response.code() == 200) {
+          val homeSchema = response.body()!!
+          homeApiListener.onVerticalResponseSuccess(homeSchema.output.data.items)
+        } else {
+          homeApiListener.onVerticalResponseFailure("Something does not seem to be right!")
+        }
+      }
+
+      override fun onFailure(
+        call: Call<HomeSchema>,
+        t: Throwable
+      ) {
+        homeApiListener.onVerticalResponseFailure(t.localizedMessage!!)
       }
     })
   }

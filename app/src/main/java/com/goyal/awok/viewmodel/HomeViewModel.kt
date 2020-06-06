@@ -11,11 +11,17 @@ class HomeViewModel : ViewModel(), HomeRepository.HomeApiListener {
   var liveDataVerticalList = MutableLiveData<List<Item>>()
   var liveDataHorizontalList = MutableLiveData<List<Item>>()
   var liveDataErrorMessage = MutableLiveData<String>()
+  private var pageNumber = 1
 
   fun setRepository(homeRepository: HomeRepository) {
     this.homeRepository = homeRepository
     homeRepository.setHomeApiListener(this)
     homeRepository.fetchHomeData()
+  }
+
+  fun performPagination() {
+    pageNumber += 1
+    homeRepository.fetchVerticalData(pageNumber)
   }
 
   fun cancelApiCall() {

@@ -16,11 +16,10 @@ import com.goyal.awok.model.schema.Item
 import com.goyal.awok.view.VerticalListAdapter.VerticalItemViewHolder
 import kotlinx.android.synthetic.main.item_product_vertical.view.*
 
-class VerticalListAdapter(
-  private val list: List<Item>,
-  private val context: Context
-) :
+class VerticalListAdapter(private val context: Context) :
     RecyclerView.Adapter<VerticalItemViewHolder>() {
+
+  private var list : ArrayList<Item> = ArrayList()
 
   override fun onCreateViewHolder(
     parent: ViewGroup,
@@ -55,6 +54,11 @@ class VerticalListAdapter(
       )
           .show()
     }
+  }
+
+  fun setData(items: List<Item>) {
+    list.addAll(items)
+    notifyDataSetChanged()
   }
 
   private fun getPrice(price: String): String {
